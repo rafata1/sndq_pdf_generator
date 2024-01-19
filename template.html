@@ -1,68 +1,62 @@
-<html>
-<head>
-    <style>
-        body {
-          font-family: 'Helvetica', sans-serif;
-        }
-        td {
-          padding: 10px
-        }
-    </style>
-</head>
-<body style="margin-left: 20%; margin-right: 20%">
-<div style="display: flex;">
-    <div style="width: 33.33%" align="left">
-        <h3>Dave Company</h3>
-        <p>company_number</p>
-        <p>address line 1</p>
-        <p>address line 2</p>
-    </div>
-    <div style="width: 33.33%" align="center">
-        <h3>Facturenlijst - grootboekrekening</h3>
-        <p>01/01/2023 - 01/01/2024</p>
-    </div>
-    <div style="width: 33.33%" align="right">
-        <h3>01/01/2024</h3>
-        <p>Pagina 1 van 1</p>
+<div style="margin: auto; width: 595px;">
+    <div style="display: flex; flex-direction: column; height: 100%; width: 100%; margin: 24px; line-height: 16px; word-wrap: break-word; font-size: 11px; font-family: Inter; justify-content: space-between;">
+        <div>
+            <div style="display: flex">
+                <div style="width: 33%" align="left">
+                    <p style="font-weight: bold;">{building_name}</p>
+                    <p>{company_number}</p>
+                    <p>{address_line_1}</p>
+                    <p>{address_line_2}</p>
+                </div>
+                <div style="width: 33%" align="center">
+                    <p style="font-weight: bold;">Facturenlijst - grootboekrekening</p>
+                    <p>{date_start} - {date_end}</p>
+                </div>
+                <div style="width: 33%" align="right">
+                    <p style="font-weight: bold;">{export_date}</p>
+                    <p>Pagina {current_page} van {total_page}</p>
+                </div>
+            </div>
+            <div>
+                <table style="width: 100%; margin-top: 16px; border: 0; border-spacing: 0px 8px; line-height: 16px; word-wrap: break-word; font-size: 11px; font-family: Inter;">
+                    <!--column header-->
+                    <tr>
+                        <td style="border-bottom: 0.5px solid grey; padding-right: 8px; font-weight: bold;" align="left">Datum</td>
+                        <td style="border-bottom: 0.5px solid grey; padding-right: 8px; font-weight: bold;" align="left">Factuurnr.</td>
+                        <td style="border-bottom: 0.5px solid grey; padding-right: 8px; font-weight: bold;" align="left">Leverancier.</td>
+                        <td style="border-bottom: 0.5px solid grey; padding-right: 8px; font-weight: bold;" align="left">Omschrijving</td>
+                        <td style="border-bottom: 0.5px solid grey; width: 72px; padding-right: 8px; font-weight: bold;" align="right">BTW</td>
+                        <td style="border-bottom: 0.5px solid grey; width: 72px; padding-left: 4px; font-weight: bold;" align="right">Totaal</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" style="font-weight: bold">
+                            6100100 - Brandblustoestellen
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">28/03/2023</td>
+                        <td align="left">abc123</td>
+                        <td align="left">SNDQ</td>
+                        <td align="left">Describing something here</td>
+                        <td align="right">&euro;100,00</td>
+                        <td align="right">&euro;200,00</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div>
+            <table style="width: 100%; margin-top: 16px; border: 0; border-spacing: 0px 8px; line-height: 16px; word-wrap: break-word; font-size: 11px; font-family: Inter;">
+                <!--footer-->
+                <tr>
+                    <td style="border-top: 0.5px solid grey; padding-right: 8px; font-weight: bold;" align="left">Totaal</td>
+                    <td style="border-top: 0.5px solid grey; padding-right: 8px; font-weight: bold;" align="left"></td>
+                    <td style="border-top: 0.5px solid grey; padding-right: 8px; font-weight: bold;" align="left"></td>
+                    <td style="border-top: 0.5px solid grey; padding-right: 8px; font-weight: bold;" align="left"></td>
+                    <td style="border-top: 0.5px solid grey; width: 72px; padding-right: 8px; font-weight: bold;" align="right">&euro;100</td>
+                    <td style="border-top: 0.5px solid grey; width: 72px; padding-left: 4px; font-weight: bold;" align="right">&euro; 2000.00</td>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>
-
-<!--column header-->
-<table style="margin-top: 5%; border: 0;" width="100%">
-    <tr>
-        <td style="font-weight: bold;" align="left">Datum</td>
-        <td style="font-weight: bold;" align="left">Factuurnr.</td>
-        <td style="font-weight: bold;" align="left">Leverancier.</td>
-        <td style="font-weight: bold;" align="left">Omschrijving</td>
-        <td style="font-weight: bold;" align="right">BTW</td>
-        <td style="font-weight: bold;" align="right">Totaal</td>
-    </tr>
-</table>
-<hr>
-
-
-<!--data-->
-<p style="padding: 10px; font-weight: bold;">6100100 - Brandblustoestellen</p>
-<table style="margin-top: 5%; border: 0;" width="100%">
-    <tr>
-        <td align="left">01/01/2023</td>
-        <td align="left">123456</td>
-        <td align="left">Icadis</td>
-        <td align="left">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</td>
-        <td align="right">$100.00</td>
-        <td align="right">$50000.23</td>
-    </tr>
-</table>
-
-<!--footer-->
-<hr>
-<table style="margin-top: 5%; border: 0;" width="100%">
-    <tr>
-        <td style="font-weight: bold;" align="left">Totaal</td>
-        <td style="width: 100%"></td>
-        <td style="font-weight: bold;" align="right">$100.0</td>
-        <td style="font-weight: bold;" align="right">$50000.23</td>
-    </tr>
-</table>
-</body>
-</html>
